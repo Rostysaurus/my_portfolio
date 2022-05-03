@@ -8,13 +8,17 @@ import Works from '../components/works/Works'
 import Testimonials from '../components/testimonials/Testimonials'
 import Contact from '../components/contact/Contact'
 import { useState } from "react";
+import Menu from '../components/menu/Menu'
 
 export default function Home() {
   const [topbarActive, setTopbarActive] = useState(false)
 
   const toolbarToggleHandler = () => {
-    console.log('suka');
     topbarActive === false ? setTopbarActive(true) : setTopbarActive(false)
+  }
+
+  const deactivateTopbarHandler = () => {
+    setTopbarActive(false)
   }
   return (
     <div className={classes.container}>
@@ -25,7 +29,8 @@ export default function Home() {
       </Head>
       <div className={classes.app}>
         <Topbar toolbarToggle={toolbarToggleHandler} active={topbarActive}/>
-        <div className={classes.sections}>
+        <Menu active={topbarActive} deactivateTopbar={toolbarToggleHandler}/>
+        <div className={classes.sections} onClick={deactivateTopbarHandler}>
           <Intro/>
           <Portfolio/>
           <Works/>
