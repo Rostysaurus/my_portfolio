@@ -2,23 +2,23 @@ import classes from "./portfolio.module.scss"
 import PortfolioList from "../portfolioList/PortfolioList"
 import PortfolioItem from "../portfolioItem/PortfolioItem";
 import { useState, useEffect } from "react";
-import { allPortfolio, fullstackPortfolio, frontendPortfolio } from "../data/data"
+import { fullstackSkills, frontendSkills, backendSkills } from "../data/skills"
 export default function Portfolio() {
 
 
-  const [selected, setSelected] = useState("all")
+  const [selected, setSelected] = useState("fullstack")
   const [filteredItems, setFilteredItems] = useState([])
 
   useEffect(() => {
     switch (selected) {
-      case "all":
-        setFilteredItems(allPortfolio)
-        break;
       case "fullstack":
-        setFilteredItems(fullstackPortfolio)
+        setFilteredItems(fullstackSkills)
         break;
       case "frontend":
-        setFilteredItems(frontendPortfolio)
+        setFilteredItems(frontendSkills)
+        break;
+      case "backend":
+        setFilteredItems(backendSkills)
         break;
       default:
         break;
@@ -27,22 +27,22 @@ export default function Portfolio() {
 
   const list = [
     {
-      id: "all",
-      title: "All"
-    },
-    {
       id: "fullstack",
-      title: "Full Stack"
+      title: "Full-Stack"
     },
     {
       id: "frontend",
-      title: "Front End"
+      title: "Frontend"
+    },
+    {
+      id: "backend",
+      title: "Backend"
     }
   ]
 
   return (
     <div className={classes.portfolio} id="portfolio">
-      <h1>Portfolio</h1>
+      <h1>Skills</h1>
       <ul>
         {list.map((item) => (
           <PortfolioList

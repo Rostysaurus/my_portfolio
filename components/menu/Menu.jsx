@@ -8,10 +8,10 @@ export default function Menu(props) {
           <a href="#intro">Home</a>
         </li>
         <li onClick={props.deactivateTopbar}>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#portfolio">Skills</a>
         </li>
         <li onClick={props.deactivateTopbar}>
-          <a href="#works">Works</a>
+          <a href="#works">Projects</a>
         </li>
         <li onClick={props.deactivateTopbar}>
           <a href="#testimonials">Testimonials</a>

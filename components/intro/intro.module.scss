@@ -1,19 +1,23 @@
 .intro {
   background-color: white;
   display: flex;
+  height: calc(100vh - 70px);
 
   .left {
     flex: 0.5;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .imageContainer{
       height: auto;
-      width: 500px;
+      width: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      float: right;
+      // float: right;
 
       img {
         height: 100%;
@@ -24,6 +28,10 @@
   .right {
     flex: 0.5;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .wrapper{
       width: 100%;
       height: 100%;
@@ -41,6 +49,7 @@
       }
       h3{
         font-size: 35px;
+        // position: relative;
 
         span{
           font-size: inherit;
@@ -51,9 +60,10 @@
 
       a{
         font-size: 4rem;
+
         position: absolute;
         bottom: 20px;
-        left: 44%;
+        right: 50%;
 
         .icon {
           font-size: 72px;
