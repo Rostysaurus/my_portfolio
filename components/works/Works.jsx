@@ -2,10 +2,11 @@ import classes from "./works.module.scss"
 import Image from "next/image"
 import {allPortfolio, fullstackSkills} from "../data/data"
 import { ExpandMore, ChevronRight, ChevronLeft } from "@material-ui/icons";
-import { useState } from "react";
+import Button from '@material-ui/core/Button';
+import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLayerGroup, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'
-
+import MultiActionAreaCard from "../card/card";
 
 // console.log(allPortfolio.map(project => (project.tags)))
 export default function Works() {
@@ -29,6 +30,7 @@ export default function Works() {
   }
 
   return (
+    <Fragment>
     <div className={classes.works} id="works">
       <h1>Projects</h1>
       <div className={classes.slider} style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
@@ -46,6 +48,10 @@ export default function Works() {
                         ))
                       ))}
                     </span>
+                    <div className={classes.actions}>
+                    <Button variant="contained" color="primary">Code</Button>
+                    <Button variant="contained" color="primary">Source</Button>
+                    </div>
                   </div>
                 </div>
                 <div className={classes.right}>
@@ -62,5 +68,6 @@ export default function Works() {
       className={`${classes.arrow} ${classes.left}`}
       onClick={leftSlideHandler}/>
     </div>
+    </Fragment>
   )
 }
