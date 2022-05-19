@@ -18,7 +18,6 @@ export default function Menu(props) {
         </li>
         <li onClick={props.deactivateTopbar}>
         <a href='/assets/Kanibolotskyi_CV.pdf' target="_blank" download>CV {<FontAwesomeIcon icon={faCloudArrowDown} />}</a>
-        {/* <Link href="/assets/Kanibolotskyi_CV.pdf" target="_blank" download>{<FontAwesomeIcon icon={faCloudArrowDown} />}CV</Link> */}
         </li>
         <li onClick={props.deactivateTopbar}>
           <a href="#contact">Contact</a>

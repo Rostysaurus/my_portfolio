@@ -33,12 +33,11 @@ export default function Contact() {
       console.log('Response received')
       if (res.status === 200) {
         console.log('Response succeeded!')
-        setSubmitted(true)
+        setMessage(true);
         formRef.current.reset()
       }
     })
     console.log(formData)
-    setMessage(true);
   };
   return (
     <div className={classes.contact} id="contact">
