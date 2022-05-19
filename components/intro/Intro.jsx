@@ -8,18 +8,18 @@ export default function Intro() {
 
   const textRef = useRef()
 
-  // useEffect(() => {
-  //   init(textRef.current, {
-  //     showCursor: false,
-  //     strings: ['Web Developer' ]
-  //   })
-  // }, [])
+  useEffect(() => {
+    init(textRef.current, {
+      showCursor: false,
+      strings: ['Web Developer' ]
+    })
+  }, [])
 
   return (
     <div className={classes.intro} id="intro">
       <div className={classes.left}>
         <div className={classes.imageContainer}>
-          <img className={classes.img} src="/assets/myself_improved.jpg" alt="Rostyslav" />
+          <Image className={classes.img} src="/assets/myself_improved.jpg" alt="Rostyslav" width={700} height={500}/>
         </div>
       </div>
       <div className={classes.right}>
