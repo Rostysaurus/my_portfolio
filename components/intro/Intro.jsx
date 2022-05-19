@@ -2,6 +2,7 @@ import classes from "./intro.module.scss"
 import { ExpandMore } from "@material-ui/icons";
 import { useEffect, useRef } from "react";
 import { init } from 'ityped'
+import Image from "next/image";
 
 export default function Intro() {
 
@@ -18,7 +19,7 @@ export default function Intro() {
     <div className={classes.intro} id="intro">
       <div className={classes.left}>
         <div className={classes.imageContainer}>
-          <img src="/assets/mysels-square-.jpg" alt="Rostyslav"/>
+          <img className={classes.img} src="/assets/myself_improved.jpg" alt="Rostyslav" />
         </div>
       </div>
       <div className={classes.right}>

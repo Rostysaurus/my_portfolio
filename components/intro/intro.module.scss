@@ -11,16 +11,24 @@
     align-items: center;
 
     .imageContainer{
-      height: auto;
-      width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      // height: auto;
+      // width: 300px;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // // border-radius: 50%;
+      // // float: right;
+      width: 500px;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
       border-radius: 50%;
-      // float: right;
-
-      img {
+      .img {
+        display: inline;
+        margin: 0 auto;
+        margin-left: -25%; //centers the image
         height: 100%;
+        width: auto;
       }
     }
   }

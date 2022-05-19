@@ -2,7 +2,7 @@ import classes from "./portfolio.module.scss"
 import PortfolioList from "../portfolioList/PortfolioList"
 import PortfolioItem from "../portfolioItem/PortfolioItem";
 import { useState, useEffect } from "react";
-import { fullstackSkills, frontendSkills, backendSkills } from "../data/skills"
+import { fullstackSkills, frontendSkills, backendSkills } from "../data/data"
 export default function Portfolio() {
 
 

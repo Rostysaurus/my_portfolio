@@ -6,7 +6,11 @@ export default function Topbar(props) {
     <div className={`${classes.topbar} ${props.active ? classes.active : null}`}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
-          <a className={classes.logo}>Portfolio.</a>
+          <div className={`${classes.myLogo} ${props.active ? classes.active : null}`}>
+          <a className={`${classes.curly} ${props.active ? classes.active : null}`}>{'{ '}</a>
+          <a className={`${classes.name} ${props.active ? classes.active : null}`}>rostyslav_kanibolotskyi</a>
+          <a className={classes.curly}>{' }'}</a>
+          </div>
           <div className={classes.itemContainer}>
             <Person className={classes.icon}/>
             <span>+49 160 360 71 64</span>

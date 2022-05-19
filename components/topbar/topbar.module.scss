@@ -19,13 +19,30 @@
     .left {
       display: flex;
       align-items: center;
-      .logo {
-        font-size: 30px;
+
+      .myLogo {
+        background-color: white;
+        font-size: 25px;
         font-weight: 700;
-        text-decoration: none;
-        color: inherit;
-        margin-right: 40px;
+        font-family: 'Courier Prime', monospace;
+        cursor: pointer;
+
+        .curly {
+          color: #0000ff;
+        }
+
+        .name {
+          // color: #AF00DB;
+          color: #000c18;
+        }
       }
+      // .logo {
+      //   font-size: 30px;
+      //   font-weight: 700;
+      //   text-decoration: none;
+      //   color: inherit;
+      //   margin-right: 40px;
+      // }
       .itemContainer {
         display: flex;
         align-items: center;
@@ -63,6 +80,21 @@
   &.active{
     background-color: $mainColor;
     color: white;
+
+    .left {
+
+      .myLogo{
+        background-color: $mainColor;
+
+        .curly {
+          color: #ffe681;
+        }
+
+        .name {
+          color: #80baff;
+        }
+      }
+    }
 
     .hamburger {
       span {

@@ -34,7 +34,6 @@ export default function Home() {
           <Intro/>
           <Portfolio/>
           <Works/>
-          <Testimonials/>
           <Contact/>
         </div>
       </div>
