@@ -40,3 +40,15 @@ export default function Home() {
     </div>
   )
 }
+
+// export async function getServerSideProps() {
+//   const [operationsRes, incidentsRes] = await Promise.all([
+//     fetch(`${process.env.APP_DOMAIN}/api/${apiRoute}`),
+//     fetch(`${process.env.APP_DOMAIN}/api/${apiRoute2}`)
+//   ]);
+//   const [operations, incidents] = await Promise.all([
+//     operationsRes.json(),
+//     incidentsRes.json()
+//   ]);
+//   return { props: { operations, incidents } };
+// }
