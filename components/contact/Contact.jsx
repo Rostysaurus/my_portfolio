@@ -108,9 +108,10 @@ export default function Contact() {
   return (
     <div className={classes.contact} id="contact">
       <div className={classes.left}>
-        <Image src="/assets/message.svg" alt="" width={250} height={250}/>
+        <Image src="/assets/message.svg" alt="" width={500} height={500}/>
       </div>
       <div className={classes.right}>
+      <h1>Contact</h1>
         <form ref={formRef} method="post" onSubmit={handleSubmit}>
           <input
             className={`${nameIsValid === false ? classes.error : classes.valid}`}
