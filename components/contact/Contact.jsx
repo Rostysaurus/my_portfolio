@@ -22,6 +22,40 @@ const changeEmailReducer = (state, action) => {
   }
 }
 
+const changeNameReducer = (state, action) => {
+  if (action.type === "CHANGE")
+  return {
+    value: action.value,
+    isValid: action.value
+  }
+  if (action.type === "BLUR")
+  return {
+    value: state.value,
+    isValid: state.value.length >= 1
+  }
+  return {
+    value: "",
+    isValid: false
+  }
+}
+
+const changeTextReducer = (state, action) => {
+  if (action.type === "CHANGE")
+  return {
+    value: action.value,
+    isValid: action.value
+  }
+  if (action.type === "BLUR")
+  return {
+    value: state.value,
+    isValid: state.value.length >= 1
+  }
+  return {
+    value: "",
+    isValid: false
+  }
+}
+
 export default function Contact() {
   const [message, setMessage] = useState(false);
   const [nameIsValid, setNameIsValid] = useState()
@@ -33,10 +67,25 @@ export default function Contact() {
   const textInput = useRef()
   const formRef = useRef()
 
-  const [emailState, dispatchEmail] = useReducer(changeEmailReducer, {value: "", isValid: null})
+  //Input states
+  const [nameState, dispatchName] = useReducer(changeNameReducer, {value: "", isValid: false})
+  const [emailState, dispatchEmail] = useReducer(changeEmailReducer, {value: "", isValid: false})
+  const [textState, dispatchText] = useReducer(changeTextReducer,{value: "", isValid: false})
 
   const validateNameHandler = () => {
-    setNameIsValid(nameInput.current.value)
+    console.log("nameBlur")
+    dispatchName({
+      type: "BLUR",
+    })
+  }
+
+  const changeNameHandler = (event) => {
+    dispatchName({
+      type: "CHANGE",
+      value: event.target.value
+    })
+
+    setFormIsValid(emailState.value.includes("@") && nameState.value && textState.value)
   }
 
   const changeEmailHandler = (event) => {
@@ -45,7 +94,16 @@ export default function Contact() {
       value: event.target.value
     })
 
-    setFormIsValid(emailState.value.includes("@") && nameInput.current.value && textInput.current.value)
+    setFormIsValid(emailState.value.includes("@") && nameState.value && textState.value)
+  }
+
+  const changeTextHandler = (event) => {
+    dispatchText({
+      type: "CHANGE",
+      value: event.target.value
+    })
+
+    setFormIsValid(emailState.value.includes("@") && nameState.value && textState.value)
   }
 
   const validateEmailHandler = (event) => {
@@ -55,7 +113,9 @@ export default function Contact() {
   }
 
   const validateTextHandler = () => {
-    setTextIsValid(textInput.current.value)
+    dispatchName({
+      type: "BLUR",
+    })
   }
 
   // useEffect(() => {
@@ -69,9 +129,9 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const enteredName = nameInput.current.value
+    const enteredName = nameState.value
     const enteredEmail = emailState.value
-    const enteredText = textInput.current.value
+    const enteredText = textState.value
 
     const formData = {
       name: enteredName,
@@ -99,9 +159,9 @@ export default function Contact() {
     } else if (!enteredName) {
       nameIsValid(false)
     } else if (!enteredEmail) {
-      alert("email bitch!")
+      alert("email!")
     } else if (!enteredText) {
-      alert("text bitch!")
+      alert("text")
     } else null
 
   };
@@ -114,11 +174,13 @@ export default function Contact() {
       <h1>Contact</h1>
         <form ref={formRef} method="post" onSubmit={handleSubmit}>
           <input
-            className={`${nameIsValid === false ? classes.error : classes.valid}`}
+            className={`${nameState.isValid === false ? classes.error : classes.valid}`}
             type="text"
             placeholder="Name"
-            ref={nameInput}
-            onChange={validateNameHandler}/>
+            value={nameState.value}
+            // ref={nameInput}
+            onChange={changeNameHandler}
+            onBlur={validateNameHandler}/>
           <input
             className={`${emailState.isValid === false ? classes.error : classes.valid}`}
             type="text"
@@ -128,10 +190,12 @@ export default function Contact() {
             onChange={changeEmailHandler}
             onBlur={validateEmailHandler}/>
           <textarea
-            className={`${textIsValid === false ? classes.error : classes.valid}`}
+            className={`${textState.isValid === false ? classes.error : classes.valid}`}
             placeholder="Message"
-            ref={textInput}
-            onChange={validateTextHandler}>
+            // ref={textInput}
+            value={textState.value}
+            onChange={changeTextHandler}
+            onBlur={validateTextHandler}>
           </textarea>
           <button type="submit">Send</button>
           {message && <span>Thansk for your message. I will reply shortly!</span>}
