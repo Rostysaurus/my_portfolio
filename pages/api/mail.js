@@ -23,9 +23,9 @@ export default function handler(req, res) {
     <p><strong>Email: </strong> ${req.body.email}</p><br>
     <p><strong>Message: </strong> ${req.body.text}</p><br>
   `
-   }
+  }
 
-   transporter.sendMail(mailData, function (err, info) {
+  transporter.sendMail(mailData, function (err, info) {
     if(err)
       console.log(err)
     else

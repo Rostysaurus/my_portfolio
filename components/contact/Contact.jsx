@@ -1,7 +1,6 @@
 import classes from './contact.module.scss'
-import { useState } from "react";
 import Image from 'next/image';
-import { useRef, useEffect, useReducer } from "react";
+import { useRef, useEffect, useReducer, useState } from "react";
 import {Box, Button} from "@mui/material";
 import TextField from "@mui/material/TextField";
 
@@ -54,6 +53,10 @@ const changeTextReducer = (state, action) => {
     value: "",
     isValid: false
   }
+}
+
+const handleClasses = (state) => {
+  return `${state.isValid === false ? classes.error : classes.valid}`
 }
 
 export default function Contact() {
@@ -164,6 +167,8 @@ export default function Contact() {
       alert("text")
     } else null
 
+
+
   };
   return (
     <div className={classes.contact} id="contact">
@@ -174,25 +179,22 @@ export default function Contact() {
       <h1>Contact</h1>
         <form ref={formRef} method="post" onSubmit={handleSubmit}>
           <input
-            className={`${nameState.isValid === false ? classes.error : classes.valid}`}
+            className={handleClasses(nameState)}
             type="text"
             placeholder="Name"
             value={nameState.value}
-            // ref={nameInput}
             onChange={changeNameHandler}
             onBlur={validateNameHandler}/>
           <input
-            className={`${emailState.isValid === false ? classes.error : classes.valid}`}
+            className={handleClasses(emailState)}
             type="text"
             placeholder="Email"
-            // ref={emailInput}
             value={emailState.value}
             onChange={changeEmailHandler}
             onBlur={validateEmailHandler}/>
           <textarea
-            className={`${textState.isValid === false ? classes.error : classes.valid}`}
+            className={handleClasses(textState)}
             placeholder="Message"
-            // ref={textInput}
             value={textState.value}
             onChange={changeTextHandler}
             onBlur={validateTextHandler}>
