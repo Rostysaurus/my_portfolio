@@ -55,7 +55,7 @@ export default function Works() {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Image src={project.image} alt="" width={700} height={500}/>
+                  <Image src={project.image} alt={project.image} width={2100} height={1500}/>
                 </div>
             </div>
         </div>
