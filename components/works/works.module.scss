@@ -47,20 +47,20 @@
           overflow: hidden;
           width: 75%;
           height: 100%;
-          background-color: white;
-          border-radius: 20px;
+          border-radius: 10px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #f0f8ff;
           box-shadow: 0 1px 6px rgb(0 0 0 / 5%);
 
           .left {
+            height: 100%;
             flex: 4;
             padding: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #f0f8ff;
 
             .leftContainer {
               // width: 90%;
@@ -102,16 +102,15 @@
           }
 
           .right {
-            height: 100%;
+            background-color: #f0f8ff;
             flex: 8;
             display: flex;
             // align-items: center;
             justify-content: center;
-            height: 100%;
 
             img {
-              width: 500px;
-              margin-left: -6%;
+              // width: 500px;
+              // margin-left: -6%;
             }
           }
         }

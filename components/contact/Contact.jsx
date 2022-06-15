@@ -121,15 +121,6 @@ export default function Contact() {
     })
   }
 
-  // useEffect(() => {
-  //   console.log("useEffect")
-  //   // const identifier = setTimeout(() => {
-  //   //   console.log("timout");
-  //   //   setFormIsValid(nameInput.current.value && emailInput.current.value.includes('@') && textInput.current.value)
-  //   // }, 500)
-  // }, [nameInput, emailInput, textInput])
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const enteredName = nameState.value
@@ -166,8 +157,6 @@ export default function Contact() {
     } else if (!enteredText) {
       alert("text")
     } else null
-
-
 
   };
   return (
