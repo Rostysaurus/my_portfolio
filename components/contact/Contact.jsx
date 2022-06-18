@@ -75,6 +75,27 @@ export default function Contact() {
   const [emailState, dispatchEmail] = useReducer(changeEmailReducer, {value: "", isValid: false})
   const [textState, dispatchText] = useReducer(changeTextReducer,{value: "", isValid: false})
 
+  const resetEmailInputValue = () => {
+    dispatchEmail({
+      type: "CHANGE",
+      value: ""
+    })
+  }
+
+  const resetNameInputValue = () => {
+    dispatchName({
+      type: "CHANGE",
+      value: ""
+    })
+  }
+
+  const resetTextInputValue = () => {
+    dispatchText({
+      type: "CHANGE",
+      value: ""
+    })
+  }
+
   const validateNameHandler = () => {
     console.log("nameBlur")
     dispatchName({
@@ -148,7 +169,10 @@ export default function Contact() {
       })
       setMessage(true);
       setNameIsValid(true)
-      formRef.current.reset()
+      resetEmailInputValue()
+      resetNameInputValue()
+      resetTextInputValue()
+      // formRef.current.reset()
       console.log(formData)
     } else if (!enteredName) {
       nameIsValid(false)

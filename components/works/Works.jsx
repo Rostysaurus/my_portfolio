@@ -34,11 +34,11 @@ export default function Works() {
     <div className={classes.works} id="works">
       <h1>Projects</h1>
       <div className={classes.slider} style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
-         {allPortfolio.map((project) => (
+        {allPortfolio.map((project) => (
             <div className={classes.container} key={project.id}>
             <div className={classes.item}>
-              <div className={classes.left}>
-                <div className={classes.leftContainer}>
+                <div className={classes.topContainer}>
+                  <div className={classes.left}>
                     <h2>{project.type === "Fullstack" ? <FontAwesomeIcon icon={faLayerGroup} /> : <FontAwesomeIcon icon={faWandMagicSparkles} />} {project.title} </h2>
                     <p>{project.description}</p>
                     <span className={classes.skillsContainer}>
@@ -48,20 +48,22 @@ export default function Works() {
                         ))
                       ))}
                     </span>
-                    <div className={classes.actions}>
+                  </div>
+                    <div className={classes.right} style={{position: 'relative'}}>
+                    <Image src={project.image} alt={project.image} width="50%" height="50%" layout="responsive" objectFit="contain"/>
+                </div>
+                  </div>
+{/*
+                  <div className={classes.actions}>
                     <Button variant="contained" color="primary">Code</Button>
                     <Button variant="contained" color="primary">Source</Button>
-                    </div>
-                  </div>
-                </div>
-                <div className={classes.right}>
-                  <Image src={project.image} alt={project.image} width={1728} height={1117}/>
-                </div>
+                    </div> */}
+
             </div>
         </div>
-         ))}
+        ))}
       </div>
-    <ChevronRight
+      <ChevronRight
       className={`${classes.arrow} ${classes.right}`}
       onClick={rightSlideHandler} />
     <ChevronLeft

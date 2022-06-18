@@ -1,16 +1,12 @@
 .works {
   background-color: white;
-  height: calc(100vh - 70px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
 
     h1{
-      position: absolute;
       font-size: 50px;
-      top: 0;
+      text-align: center;
     }
 
     .arrow {
@@ -19,6 +15,7 @@
       color: black;
       position: absolute;
       cursor: pointer;
+      top: 50%;
 
       &.right{
         right: 20px
@@ -48,27 +45,35 @@
           width: 75%;
           height: 100%;
           border-radius: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           box-shadow: 0 1px 6px rgb(0 0 0 / 5%);
+          background-color: #6852e7;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
 
-          .left {
-            height: 100%;
-            flex: 4;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f8ff;
 
-            .leftContainer {
-              // width: 90%;
-              // height: 70%;
-              display: flex;
-              flex-direction: column;
+            .topContainer {
+              width: 100%;
+              // display: flex;
+              // flex-direction: column;
               justify-content: space-between;
-              align-items: flex-start;
+              align-items: center;
+              padding: 15px;
+              display: flex;
+              align-items: center;
+              // justify-content: center;
+
+              .left {
+                flex: 1;
+              }
+
+              h2 {
+                color: white;
+              }
+
+              p {
+                color: #c1b5ff;
+              }
 
               .skillsContainer{
                 display: flex;
@@ -91,26 +96,26 @@
               p {
                 font-size: 13px;
               }
+            }
 
-              .actions {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 10px;
+            .actions {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 15px;
+
+              button {
+                flex: 1;
               }
             }
-          }
+
 
           .right {
-            background-color: #f0f8ff;
-            flex: 8;
-            display: flex;
-            // align-items: center;
-            justify-content: center;
+            flex: 2;
 
             img {
-              // width: 500px;
-              // margin-left: -6%;
+              // object-fit: fill;
+              // border-radius: 10px;
             }
           }
         }

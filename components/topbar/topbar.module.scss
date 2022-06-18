@@ -28,7 +28,7 @@
         cursor: pointer;
 
         .curly {
-          color: #0000ff;
+          color: #6753e9;
         }
 
         .name {
@@ -78,20 +78,20 @@
   }
 
   &.active{
-    background-color: $mainColor;
+    background-color: #1c1929;
     color: white;
 
     .left {
 
       .myLogo{
-        background-color: $mainColor;
+        background-color: #1c1929;
 
         .curly {
-          color: #ffe681;
+          color: #f3ce00;
         }
 
         .name {
-          color: #80baff;
+          color: #6753e9;
         }
       }
     }
