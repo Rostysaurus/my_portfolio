@@ -33,14 +33,14 @@ export const allPortfolio = [
     type: "Frontend",
   },
   {
-    title: 'Dice Game',
-    description: "One of the most difficult gamnes I built when begginning my coding journey.",
-    image: '/assets/mockups/game.png',
-    tags: ['JavaScript', 'HTML', 'CSS'],
+    title: 'Help Local',
+    description: "This app is desifned for Ukrainian refugees to help each other get by in their new countries. It's a hub where peopple can support each other in these difficult circumstances.",
+    image: '/assets/mockups/help_local.png',
+    tags: ["Next.js", "Node.js", "MongoDB", "React", "Sass", 'HTML', 'CSS'],
     source: 'https://rostysaurus.github.io/Dice-Game/',
     visit: 'https://github.com/Rostysaurus/Dice-Game',
     id: 4,
-    type: "Frontend",
+    type: "Fullstack",
   }
 ]
 

@@ -34,6 +34,7 @@
       transition: all 1s ease-out;
 
       .container {
+        height: 100%;
         width: 100vw;
         display: flex;
         align-items: center;
@@ -50,6 +51,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          align-items: center;
 
 
             .topContainer {
@@ -58,22 +60,11 @@
               // flex-direction: column;
               justify-content: space-between;
               align-items: center;
-              padding: 15px;
+              padding: 16px;
               display: flex;
               align-items: center;
+              // border-bottom: dotted #c1b5ff;
               // justify-content: center;
-
-              .left {
-                flex: 1;
-              }
-
-              h2 {
-                color: white;
-              }
-
-              p {
-                color: #c1b5ff;
-              }
 
               .skillsContainer{
                 display: flex;
@@ -81,6 +72,7 @@
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 16px;
+                // padding: 16px;
               }
 
                 img {
@@ -96,28 +88,36 @@
               p {
                 font-size: 13px;
               }
-            }
 
-            .actions {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 15px;
+              .icon {
+                background-color: #8576ef;
+                color: white;
+                padding: 16px;
+                border-radius: 10px;
+              }
 
-              button {
-                flex: 1;
+              h2 {
+                color: white;
+                font-size: 30px;
+              }
+
+              p {
+                color: #c1b5ff;
               }
             }
 
-
-          .right {
-            flex: 2;
-
-            img {
-              // object-fit: fill;
-              // border-radius: 10px;
+            .picture {
+              flex: 2;
             }
-          }
+
+            .description {
+              text-align: center;
+              p {
+                font-weight: 100;
+                color: white;
+              }
+            }
+
         }
       }
     }

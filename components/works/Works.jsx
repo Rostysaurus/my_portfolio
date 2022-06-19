@@ -38,26 +38,25 @@ export default function Works() {
             <div className={classes.container} key={project.id}>
             <div className={classes.item}>
                 <div className={classes.topContainer}>
-                  <div className={classes.left}>
-                    <h2>{project.type === "Fullstack" ? <FontAwesomeIcon icon={faLayerGroup} /> : <FontAwesomeIcon icon={faWandMagicSparkles} />} {project.title} </h2>
-                    <p>{project.description}</p>
-                    <span className={classes.skillsContainer}>
+                <div className={classes.icon}>
+                  {project.type === "Fullstack" ? <FontAwesomeIcon icon={faLayerGroup} /> : <FontAwesomeIcon icon={faWandMagicSparkles} />}
+                </div>
+                <h2> {project.title} </h2>
+                <span className={classes.skillsContainer}>
                       {project.tags.map((tag) => (
                         fullstackSkills.map((skill) => (
                           tag === skill.title ? <Image key={skill.id} className={classes.skillImage} src={skill.image} alt="" width={25} height={25}/> : null
                         ))
                       ))}
                     </span>
-                  </div>
-                    <div className={classes.right} style={{position: 'relative'}}>
-                    <Image src={project.image} alt={project.image} width="50%" height="50%" layout="responsive" objectFit="contain"/>
+
                 </div>
-                  </div>
-{/*
-                  <div className={classes.actions}>
-                    <Button variant="contained" color="primary">Code</Button>
-                    <Button variant="contained" color="primary">Source</Button>
-                    </div> */}
+                  <div className={classes.description}>
+                  <p>{project.description}</p>
+                </div>
+                <div className={classes.picture} style={{position: 'relative', width: "50%", height: "50%"}}>
+                    <Image src={project.image} alt={project.image} width="100%" height="100%" layout="responsive" objectFit="contain"/>
+                </div>
 
             </div>
         </div>
