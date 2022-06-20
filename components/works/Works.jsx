@@ -31,6 +31,31 @@ export default function Works() {
 
   return (
     <Fragment>
+      <div className={classes.myWorks}>
+        {allPortfolio.map((project) => (
+              <div className={classes.card} key={project.id}>
+                <div className={classes.left} style={{position: 'relative', width: "100%", height: "100%"}}>
+                  <Image src={project.image} alt={project.image} width="25%" height="25%" layout="responsive" objectFit="contain"/>
+                </div>
+                <div className={classes.right}>
+                  <div className={classes.text}>
+                    <h2> {project.title} </h2>
+                    <p>{project.description}</p>
+                  </div>
+                  <div className={classes.skills}>
+                    {project.tags.map((tag) => (
+                      fullstackSkills.map((skill) => (
+                        tag === skill.title ? <Image key={skill.id} className={classes.skillImage} src={skill.image} alt="" width={25} height={25}/> : null
+                        ))
+                      ))}
+                  </div>
+                </div>
+          </div>
+          ))}
+      </div>
+
+
+
     <div className={classes.works} id="works">
       <h1>Projects</h1>
       <div className={classes.slider} style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
@@ -38,10 +63,13 @@ export default function Works() {
             <div className={classes.container} key={project.id}>
             <div className={classes.item}>
                 <div className={classes.topContainer}>
-                <div className={classes.icon}>
+                  <div className={classes.iconAndTitle}>
+                  <div className={classes.icon}>
                   {project.type === "Fullstack" ? <FontAwesomeIcon icon={faLayerGroup} /> : <FontAwesomeIcon icon={faWandMagicSparkles} />}
                 </div>
-                <h2> {project.title} </h2>
+                  <h2> {project.title} </h2>
+                  </div>
+
                 <span className={classes.skillsContainer}>
                       {project.tags.map((tag) => (
                         fullstackSkills.map((skill) => (
