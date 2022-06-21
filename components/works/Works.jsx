@@ -1,16 +1,29 @@
 import classes from "./works.module.scss"
 import Image from "next/image"
 import {allPortfolio, fullstackSkills} from "../data/data"
-import { ExpandMore, ChevronRight, ChevronLeft } from "@material-ui/icons";
+import { ExpandMore, ChevronRight, ChevronLeft  } from "@material-ui/icons";
 import Button from '@material-ui/core/Button';
-import { Fragment, useState } from "react";
+import { Fragment, useState, useReducer } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLayerGroup, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'
 import MultiActionAreaCard from "../card/card";
 
+const initialState = {slideIndex: 0};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "next":
+      return state.slideIndex < allPortfolio.length - 1 ? {slideIndex: state.slideIndex + 1} : {slideIndex: 0}
+    case "prev":
+      return state.slideIndex === 0 ? {slideIndex: allPortfolio.length - 1} : {slideIndex: state.slideIndex - 1}
+    default:
+      throw new Error();
+  }
+}
+
 // console.log(allPortfolio.map(project => (project.tags)))
 export default function Works() {
-
+  const [slideState, dispatch] = useReducer(reducer, initialState)
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const rightSlideHandler = () => {
@@ -29,11 +42,19 @@ export default function Works() {
     }
   }
 
+  // allPortfolio.map((project, index) => (
+  //   console.log(index)
+  // ))
+
+  console.log(slideState.slideIndex)
+
   return (
     <Fragment>
       <div className={classes.myWorks}>
-        {allPortfolio.map((project) => (
-              <div className={classes.card} key={project.id}>
+        <h1>Projects</h1>
+        {allPortfolio.map((project, index) => (
+            index === slideState.slideIndex && (
+              <div className={classes.card} key={index}>
                 <div className={classes.left} style={{position: 'relative', width: "100%", height: "100%"}}>
                   <Image src={project.image} alt={project.image} width="25%" height="25%" layout="responsive" objectFit="contain"/>
                 </div>
@@ -45,58 +66,21 @@ export default function Works() {
                   <div className={classes.skills}>
                     {project.tags.map((tag) => (
                       fullstackSkills.map((skill) => (
-                        tag === skill.title ? <Image key={skill.id} className={classes.skillImage} src={skill.image} alt="" width={25} height={25}/> : null
+                        tag === skill.title ? <Image key={skill.id} className={classes.skillImage} src={skill.image} alt="" width={40} height={40}/> : null
                         ))
                       ))}
                   </div>
+                </div>
+                <div className={`${classes.chevron} ${classes.next}`} onClick={() => dispatch({type: 'next'})}>
+                  <ChevronRight/>
+                </div>
+                <div className={`${classes.chevron} ${classes.prev}`} onClick={() => dispatch({type: 'prev'})}>
+                  <ChevronLeft/>
                 </div>
           </div>
+            )
           ))}
       </div>
-
-
-
-    <div className={classes.works} id="works">
-      <h1>Projects</h1>
-      <div className={classes.slider} style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
-        {allPortfolio.map((project) => (
-            <div className={classes.container} key={project.id}>
-            <div className={classes.item}>
-                <div className={classes.topContainer}>
-                  <div className={classes.iconAndTitle}>
-                  <div className={classes.icon}>
-                  {project.type === "Fullstack" ? <FontAwesomeIcon icon={faLayerGroup} /> : <FontAwesomeIcon icon={faWandMagicSparkles} />}
-                </div>
-                  <h2> {project.title} </h2>
-                  </div>
-
-                <span className={classes.skillsContainer}>
-                      {project.tags.map((tag) => (
-                        fullstackSkills.map((skill) => (
-                          tag === skill.title ? <Image key={skill.id} className={classes.skillImage} src={skill.image} alt="" width={25} height={25}/> : null
-                        ))
-                      ))}
-                    </span>
-
-                </div>
-                  <div className={classes.description}>
-                  <p>{project.description}</p>
-                </div>
-                <div className={classes.picture} style={{position: 'relative', width: "50%", height: "50%"}}>
-                    <Image src={project.image} alt={project.image} width="100%" height="100%" layout="responsive" objectFit="contain"/>
-                </div>
-
-            </div>
-        </div>
-        ))}
-      </div>
-      <ChevronRight
-      className={`${classes.arrow} ${classes.right}`}
-      onClick={rightSlideHandler} />
-    <ChevronLeft
-      className={`${classes.arrow} ${classes.left}`}
-      onClick={leftSlideHandler}/>
-    </div>
     </Fragment>
   )
 }

@@ -92,79 +92,79 @@ export const frontendPortfolio = [
 export const fullstackSkills = [
   {
     title: 'React',
-    image: "/assets/frontend/react.png",
+    image: "/assets/frontend/react.svg",
     id: 1,
     type: "frontend"
   },
   {
     title: 'JavaScript',
-    image: "/assets/frontend/js.png",
+    image: "/assets/frontend/js.svg",
     id: 2,
     type: "frontend"
   },
   {
     title: 'CSS',
-    image: "/assets/frontend/css.png",
+    image: "/assets/frontend/css.svg",
     id: 3,
     type: "frontend"
   },
   {
     title: 'HTML',
-    image: "/assets/frontend/html.png",
+    image: "/assets/frontend/html.svg",
     id: 4,
     type: "frontend"
   },
   {
     title: 'Bootstrap',
-    image: "/assets/frontend/bootstrap.png",
+    image: "/assets/frontend/bootstrap.svg",
     id: 5,
     type: "frontend"
   },
   {
     title: 'Sass',
-    image: "/assets/frontend/sass.png",
+    image: "/assets/frontend/sass.svg",
     id: 6,
     type: "frontend"
   },
   {
     title: 'Ruby',
-    image: "/assets/backend/ruby.png",
+    image: "/assets/backend/ruby.svg",
     id: 7,
     type: "backend"
   },
   {
     title: 'Rails',
-    image: "/assets/backend/rails.png",
+    image: "/assets/backend/rails.svg",
     id: 8,
     type: "backend"
   },
   {
     title: 'PostgreSQL',
-    image: "/assets/backend/postgreSQL.png",
+    image: "/assets/backend/postgreSQL.svg",
     id: 9,
     type: "backend"
   },
   {
     title: 'MongoDB',
-    image: "/assets/backend/mongoDB.png",
+    image: "/assets/backend/mongoDB.svg",
     id: 10,
     type: "backend"
   },
   {
     title: 'MySQL',
-    image: "/assets/backend/mysql.png",
+    image: "/assets/backend/mysql.svg",
     id: 11,
     type: "backend"
   },
   {
     title: 'Next.js',
-    image: "/assets/backend/nextjs.png",
+    image: "/assets/backend/nextjs.svg",
     id: 12,
     type: "backend"
   },
   {
     title: 'Node.js',
-    image: "/assets/backend/nodeJS.png",
+    image: "/assets/backend/nodeJS.svg",
     id: 13,
     type: "backend"
   },
@@ -179,37 +179,37 @@ export const fullstackSkills = [
 export const frontendSkills = [
   {
     title: 'React',
-    image: "/assets/frontend/react.png",
+    image: "/assets/frontend/react.svg",
     id: 1,
     type: "frontend"
   },
   {
     title: 'JavaScript',
-    image: "/assets/frontend/js.png",
+    image: "/assets/frontend/js.svg",
     id: 2,
     type: "frontend"
   },
   {
     title: 'CSS',
-    image: "/assets/frontend/css.png",
+    image: "/assets/frontend/css.svg",
     id: 3,
     type: "frontend"
   },
   {
     title: 'HTML',
-    image: "/assets/frontend/html.png",
+    image: "/assets/frontend/html.svg",
     id: 4,
     type: "frontend"
   },
   {
     title: 'Bootstrap',
-    image: "/assets/frontend/bootstrap.png",
+    image: "/assets/frontend/bootstrap.svg",
     id: 5,
     type: "frontend"
   },
   {
     title: 'Sass',
-    image: "/assets/frontend/sass.png",
+    image: "/assets/frontend/sass.svg",
     id: 6,
     type: "frontend"
   },
@@ -218,43 +218,43 @@ export const frontendSkills = [
 export const backendSkills = [
   {
     title: 'Ruby',
-    image: "/assets/backend/ruby.png",
+    image: "/assets/backend/ruby.svg",
     id: 1,
     type: "backend"
   },
   {
     title: 'Rails',
-    image: "/assets/backend/rails.png",
+    image: "/assets/backend/rails.svg",
     id: 2,
     type: "backend"
   },
   {
     title: 'PostgreSQL',
-    image: "/assets/backend/postgreSQL.png",
+    image: "/assets/backend/postgreSQL.svg",
     id: 3,
     type: "backend"
   },
   {
     title: 'MongoDB',
-    image: "/assets/backend/mongoDB.png",
+    image: "/assets/backend/mongoDB.svg",
     id: 4,
     type: "backend"
   },
   {
     title: 'MySQL',
-    image: "/assets/backend/mysql.png",
+    image: "/assets/backend/mysql.svg",
     id: 5,
     type: "backend"
   },
   {
     title: 'Next.js',
-    image: "/assets/backend/nextjs.png",
+    image: "/assets/backend/nextjs.svg",
     id: 6,
     type: "backend"
   },
   {
     title: 'Node.js',
-    image: "/assets/backend/nodeJS.png",
+    image: "/assets/backend/nodeJS.svg",
     id: 7,
     type: "backend"
   },
