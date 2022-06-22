@@ -3,6 +3,8 @@ import { ExpandMore } from "@material-ui/icons";
 import { useEffect, useRef } from "react";
 import { init } from 'ityped'
 import Image from "next/image";
+import { Button } from "@material-ui/core";
+import Link from "next/link";
 
 export default function Intro() {
 
@@ -27,7 +29,18 @@ export default function Intro() {
           <h2>Hi there, I am</h2>
           <h1>Rostyslav Kanibolotskyi</h1>
           <h3>Junior <span ref={textRef}>Web Developer</span></h3>
-          <a href="#portfolio"><ExpandMore className={classes.icon}/></a>
+          <div className={classes.actions}>
+            <div className={classes.btn}>
+              <Link href="#portfolio">
+                <a>Portfolio</a>
+              </Link>
+            </div>
+            <div className={`${classes.btn} ${classes.contact}`}>
+              <Link href="#contact">
+                <a>Contact</a>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

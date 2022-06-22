@@ -1,7 +1,8 @@
 .myWorks {
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(700px, 1fr) );
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   grid-gap: 32px;
 
   h1{

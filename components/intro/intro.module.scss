@@ -63,28 +63,58 @@
           font-size: inherit;
           color: #ff4d1b;
         }
-
       }
 
-      a{
-        font-size: 4rem;
+      .actions {
 
-        position: absolute;
-        bottom: 20px;
-        right: 50%;
+        display: flex;
+        gap: 20px;
 
-        .icon {
-          font-size: 72px;
-          animation: arrowBlink 2s infinite;
-        }
+        .btn {
+          margin-top: 10%;
+          width: 250px;
+          padding: 20px;
+          text-align: center;
+          background: #6852e7;
+          border-radius: 50px;
 
-        @keyframes arrowBlink {
-          100%{
-            opacity: 0;
+          a {
+            color: white;
+            font-size: 20px;
+          }
+
+          &.contact {
+            background: #f5f4f9;
+
+            a {
+              color: #1c1929;
+            }
           }
         }
 
       }
+
+
+
+      // a{
+      //   font-size: 4rem;
+
+      //   position: absolute;
+      //   bottom: 20px;
+      //   right: 50%;
+
+      //   .icon {
+      //     font-size: 72px;
+      //     animation: arrowBlink 2s infinite;
+      //   }
+
+      //   @keyframes arrowBlink {
+      //     100%{
+      //       opacity: 0;
+      //     }
+      //   }
+
+      // }
     }
   }
 }
