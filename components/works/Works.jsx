@@ -16,37 +16,17 @@ const reducer = (state, action) => {
       return state.slideIndex < allPortfolio.length - 1 ? {slideIndex: state.slideIndex + 1} : {slideIndex: 0}
     case "prev":
       return state.slideIndex === 0 ? {slideIndex: allPortfolio.length - 1} : {slideIndex: state.slideIndex - 1}
+    case "page":
+      return {slideIndex: action.value}
     default:
       throw new Error();
   }
 }
 
+
 // console.log(allPortfolio.map(project => (project.tags)))
 export default function Works() {
   const [slideState, dispatch] = useReducer(reducer, initialState)
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const rightSlideHandler = () => {
-    if (currentSlide < allPortfolio.length - 1) {
-      setCurrentSlide(prev => prev + 1)
-    } else {
-      setCurrentSlide(0)
-    }
-    }
-
-  const leftSlideHandler = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(prev => prev - 1)
-    } else {
-      setCurrentSlide(allPortfolio.length - 1)
-    }
-  }
-
-  // allPortfolio.map((project, index) => (
-  //   console.log(index)
-  // ))
-
-  console.log(slideState.slideIndex)
 
   return (
     <Fragment>
@@ -80,6 +60,19 @@ export default function Works() {
           </div>
             )
           ))}
+          <div className={classes.myPagination}>
+            <nav>
+              <ul className={classes.myPaginationFlex}>
+              {allPortfolio.map((project, index) => (
+                <li
+                  key={index}
+                  className={`${classes.page} ${ slideState.slideIndex === index && classes.active}`}
+                  onClick={() => dispatch({type: 'page', value: index})}
+                  >{index + 1}</li>
+              ))}
+              </ul>
+            </nav>
+          </div>
       </div>
     </Fragment>
   )

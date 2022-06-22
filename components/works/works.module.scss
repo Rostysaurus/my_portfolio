@@ -4,6 +4,11 @@
   justify-content: center;
   grid-gap: 32px;
 
+  h1{
+    font-size: 50px;
+    text-align: center;
+  }
+
   .card {
     display: flex;
     height: auto;
@@ -47,11 +52,11 @@
       .skills {
         // display: flex;
         // flex-wrap: wrap;
-        grid-gap: 6px;
+        gap: 10px;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
     }
@@ -61,7 +66,7 @@
       padding: 20px;
       background: #c5b7f7;
       position: absolute;
-      top: 50%;
+      bottom: 42%;
       cursor: pointer;
       opacity: 0;
       transition: all .2s ease-in-out;
@@ -89,140 +94,38 @@
 
     }
   }
-}
 
+  .pagination {
 
-
-.works {
-  background-color: white;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-
-    h1{
-      font-size: 50px;
-      text-align: center;
+    ul {
+      justify-content: center;
     }
+  }
 
-    .arrow {
-      font-size: 150px;
-      font-weight: 100;
-      color: black;
-      position: absolute;
-      cursor: pointer;
-      top: 50%;
+  .myPagination {
 
-      &.right{
-        right: 20px
-      }
-
-      &.left{
-        left: 20px
-      }
-    }
-
-    .slider {
-      // height: 350px;
+    .myPaginationFlex {
       display: flex;
-      position: absolute;
-      left: 0;
-      transition: all 1s ease-out;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
 
-      .container {
-        height: 100%;
-        width: 100vw;
+      .page {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
         display: flex;
-        align-items: center;
         justify-content: center;
-        padding: 25px;
+        align-items: center;
+        font-size: 15px;
+        cursor: pointer;
 
-        .item {
-          overflow: hidden;
-          width: 75%;
-          height: 100%;
-          border-radius: 10px;
-          box-shadow: 0 1px 6px rgb(0 0 0 / 5%);
-          background-color: #6852e7;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-
-
-            .topContainer {
-              width: 100%;
-              // display: flex;
-              // flex-direction: column;
-              justify-content: space-between;
-              align-items: center;
-              padding: 16px;
-              display: flex;
-              align-items: center;
-              // border-bottom: dotted #c1b5ff;
-              // justify-content: center;
-
-              .iconAndTitle {
-                display: flex;
-                align-items: center;
-
-                h2 {
-                  padding-left: 10px;
-                }
-              }
-
-              .skillsContainer{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 16px;
-                // padding: 16px;
-              }
-
-                img {
-                  width: 50px;
-                  object-fit: contain;
-                }
-
-
-              h2 {
-                font-size: 20px;
-              }
-
-              p {
-                font-size: 13px;
-              }
-
-              .icon {
-                background-color: #8576ef;
-                color: white;
-                padding: 16px;
-                border-radius: 10px;
-              }
-
-              h2 {
-                color: white;
-                font-size: 30px;
-              }
-
-              p {
-                color: #c1b5ff;
-              }
-            }
-
-            .picture {
-              flex: 2;
-            }
-
-            .description {
-              text-align: center;
-              p {
-                font-weight: 100;
-                color: white;
-              }
-            }
-
+        &.active {
+          background-color: #1c1929;
+          color: white;
         }
       }
     }
+  }
 }
